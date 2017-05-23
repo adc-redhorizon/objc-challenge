@@ -10,7 +10,8 @@ Red Horizon Team - Swift Challenge
 3)Setup cocoa pods on your project. You will be using either AFNetworking or AlamoFire to execute the rest requests in your project. 
 - Import the necessary pods for the networking library
 
-4)Call the first rest endpoint to obtain an array of GPS latitude,longitude points in the JSON format. The data will be received in the following format
+4)Call the rest endpoint to obtain an array of GPS latitude,longitude points in the JSON format. The data will be received in the following format
+    - http://ec2-34-207-240-57.compute-1.amazonaws.com:3000/locations
     [{"latitude":"X1", "longitude":"Y1"}, {"latitude":"X2", "longitude":"Y2"}...]
 
 5)Use the IOS location manager to obtain your current location.
