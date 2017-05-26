@@ -10,12 +10,13 @@
 - Import the necessary pods for the networking library
 
 4)Call the first rest endpoint to obtain an array of GPS latitude,longitude points in the JSON format. The data will be received in the following format
-    - GET http://ec2-34-207-240-57.compute-1.amazonaws.com:3000/locations
+    - GET https://labs.gm.com/interview/api/location
     [{"latitude":"X1", "longitude":"Y1"}, {"latitude":"X2", "longitude":"Y2"}...]
 
 5)Use the IOS location manager to obtain your current location.
 
 6)Calculate the linear distance between each set of GPS coordinates received through the rest endpoint and your current location. You can use the formula below to get distance in meters
+
 
     var R = 6371e3; // metres
     var rLat1 = lat1.toRadians();
@@ -34,9 +35,13 @@
 7)Once you have the closest location, use the rest endpoint below to obtain the geocoded address corresponding to the closest GPS coordinates
 
     GET
-    - url:"https://autofuel.gm.com:8443/api/v1/geocode/reverseGeocode?latitude=X1&longitude=Y1",
-    - headers:
-    'Authorization':'Basic dXNlcjphdXRvZnVlbHRlc3Q='
+    - url:https://labs.gm.com/interview/api/geocode/reverse?latitude=42.511852&longitude=-83.038858,
+    - response: {
+    "address":"General Motors Technical Center",
+    "formattedAddress":"General Motors Technical Center, Warren, MI 48090",
+    "locality":"Warren",
+    "region":"MI",
+    "postal":"48090"}
 
 
 8)Print out following details into UI elements of your choice in the view controller
